@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>To-do App</title>
+    <style>
+      body {
+        background: #f7cac9;
+      }
+      #todo-table {
+        position: relative;
+        width: 95%;
+        background: #92a8d1;
+        margin: 0 auto;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      #todo-table form:after {
+        margin: 0;
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      input[type="text"] {
+        width: 70%;
+        padding: 20px;
+        background: #034f84;
+        border: 0;
+        float: left;
+        font-size: 20px;
+        margin-bottom: 1%;
+        margin-left: 13%;
+      }
+
+      button {
+        padding: 20px;
+        width: 30%;
+        float: left;
+        background: #034f84;
+        border: black 1px solid;
+        box-sizing: border-box;
+        cursor: pointer;
+        font-size: 20px;
+        margin-left: 33%;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        font-family: arial;
+        font-size: 20px;
+        cursor: pointer;
+        letter-spacing: 1px;
+      }
+
+      li:hover {
+        text-decoration: line-through;
+      }
+
+      h1 {
+        margin-bottom: 0;
+        text-indent: -10000px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Todo List</h1>
+    <div id="todo-table">
+      <form>
+        <input type="text" name="item" placeholder="Add new item..." required />
+        <button type="submit">Add Item</button>
+      </form>
+      <ul>
+        <% todos.forEach(item => {%>
+        <li><%= item.item %></li>
+        <% });%>
+      </ul>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/todo-list.js"></script>
+  </body>
+</html>
